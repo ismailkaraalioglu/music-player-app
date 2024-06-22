@@ -32,8 +32,8 @@ const TabsNavigation = () => {
             style={{
               ...StyleSheet.absoluteFillObject,
               overflow: "hidden",
-              borderTopLeftRadius: 20,
-              borderTopRightRadius: 20,
+              borderTopLeftRadius: 15,
+              borderTopRightRadius: 15,
             }}
           />
         ),
