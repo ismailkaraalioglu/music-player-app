@@ -1,1 +1,1 @@
-# news-app-expo
+# music-player-app
