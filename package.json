@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "expo": "~51.0.14",
+    "expo-blur": "~13.0.2",
     "expo-constants": "~16.0.2",
     "expo-dev-client": "~4.0.18",
     "expo-linking": "~6.3.1",
