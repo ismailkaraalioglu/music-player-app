@@ -1,7 +1,7 @@
 import { unknownTrackImageUri } from "@/lib/images";
-import { Image } from "expo-image";
 import { FC } from "react";
 import { Text, TouchableHighlight, View } from "react-native";
+import FastImage from "react-native-fast-image";
 
 type Props = {
   track: { title: string; image?: string; artist?: string };
@@ -14,9 +14,10 @@ const TrackListItem: FC<Props> = ({ track }) => {
     <TouchableHighlight>
       <View className="flex flex-row items-center pr-5 gap-4">
         <View>
-          <Image
+          <FastImage
             source={{
               uri: track.image ?? unknownTrackImageUri,
+              priority: FastImage.priority.normal,
             }}
             style={{
               opacity: isActive ? 0.6 : 1,
