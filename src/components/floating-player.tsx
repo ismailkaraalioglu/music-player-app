@@ -1,22 +1,28 @@
 import { useLastActiveTrack } from "@/hooks/use-last-active-track";
 import { unknownTrackImageUri } from "@/lib/images";
+import { useRouter } from "expo-router";
 import { FC } from "react";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
 import FastImage from "react-native-fast-image";
 import { useActiveTrack } from "react-native-track-player";
-import AnimatedText from "./animated-text";
-import PlayPauseButton from "./play-pause-button";
-import SkipToNextButton from "./skip-to-next-button";
+import {
+  AnimatedText,
+  PlayPauseButton,
+  SkipToNextButton,
+} from "./player-controls";
 
 type Props = {
   style?: ViewStyle;
 };
 
 const FloatingPlayer: FC<Props> = ({ style }) => {
+  const router = useRouter();
   const activeTrack = useActiveTrack();
   const lastActiveTrack = useLastActiveTrack();
 
   const displayedTrack = activeTrack ?? lastActiveTrack;
+
+  const handlePress = () => router.navigate("/player");
 
   if (!displayedTrack) return null;
 
@@ -25,6 +31,7 @@ const FloatingPlayer: FC<Props> = ({ style }) => {
       activeOpacity={0.9}
       className="flex-row items-center bg-[#252525] px-2 py-3 rounded-xl"
       style={style}
+      onPress={handlePress}
     >
       <>
         <FastImage
