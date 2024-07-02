@@ -1,18 +1,13 @@
 import { FC } from "react";
-import { FlatList, FlatListProps, StyleSheet, View } from "react-native";
+import { FlatList, FlatListProps } from "react-native";
 import TrackPlayer, { Track } from "react-native-track-player";
+import ItemDivider from "./divider";
+import EmptyContent from "./empty-content";
 import TrackItem from "./track-item";
 
 export type TrackListProps = Partial<FlatListProps<Track>> & {
   tracks: Track[];
 };
-
-const ItemDivider = () => (
-  <View
-    className="my-2 ml-16 opacity-30 border-[#9ca3af]"
-    style={{ borderWidth: StyleSheet.hairlineWidth }}
-  />
-);
 
 const TrackList: FC<TrackListProps> = ({ tracks, ...props }) => {
   const handleSelectTrack = async (track: Track) => {
@@ -26,6 +21,7 @@ const TrackList: FC<TrackListProps> = ({ tracks, ...props }) => {
       contentContainerStyle={{ paddingTop: 10, paddingBottom: 128 }}
       ListFooterComponent={ItemDivider}
       ItemSeparatorComponent={ItemDivider}
+      ListEmptyComponent={EmptyContent}
       renderItem={({ item: track }) => (
         <TrackItem track={track} onSelectTrack={handleSelectTrack} />
       )}

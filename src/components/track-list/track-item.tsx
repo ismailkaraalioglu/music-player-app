@@ -1,9 +1,10 @@
 import { unknownTrackImageUri } from "@/lib/images";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, Ionicons } from "@expo/vector-icons";
 import { FC } from "react";
 import { Text, TouchableHighlight, View } from "react-native";
 import FastImage from "react-native-fast-image";
-import { Track, useActiveTrack } from "react-native-track-player";
+import LoaderKit from "react-native-loader-kit";
+import { Track, useActiveTrack, useIsPlaying } from "react-native-track-player";
 
 type Props = {
   track: Track;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const TrackItem: FC<Props> = ({ track, onSelectTrack }) => {
+  const { playing } = useIsPlaying();
   const isActive = useActiveTrack()?.url === track.url;
 
   const handleTrackSelect = () => {
@@ -33,6 +35,31 @@ const TrackItem: FC<Props> = ({ track, onSelectTrack }) => {
               borderRadius: 8,
             }}
           />
+          {isActive &&
+            (playing ? (
+              <LoaderKit
+                style={{
+                  position: "absolute",
+                  top: 19,
+                  left: 18,
+                  width: 16,
+                  height: 16,
+                }}
+                name="LineScaleParty"
+                color="#fff"
+              />
+            ) : (
+              <Ionicons
+                style={{
+                  position: "absolute",
+                  top: 15,
+                  left: 15,
+                }}
+                name="play"
+                size={24}
+                color="#fff"
+              />
+            ))}
         </View>
 
         <View className="flex-1 flex-row items-center">

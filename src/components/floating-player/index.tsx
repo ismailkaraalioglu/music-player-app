@@ -1,9 +1,10 @@
 import { useLastActiveTrack } from "@/hooks/use-last-active-track";
 import { unknownTrackImageUri } from "@/lib/images";
 import { FC } from "react";
-import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import { TouchableOpacity, View, ViewStyle } from "react-native";
 import FastImage from "react-native-fast-image";
 import { useActiveTrack } from "react-native-track-player";
+import AnimatedText from "./animated-text";
 import PlayPauseButton from "./play-pause-button";
 import SkipToNextButton from "./skip-to-next-button";
 
@@ -31,9 +32,16 @@ const FloatingPlayer: FC<Props> = ({ style }) => {
           style={{ width: 40, height: 40, borderRadius: 8 }}
         />
         <View className="flex-1 overflow-hidden ml-3">
-          <Text className="text-lg font-semibold pl-3 text-white">
-            {displayedTrack.title}
-          </Text>
+          <AnimatedText
+            text={displayedTrack.title ?? ""}
+            animationThreshold={25}
+            style={{
+              fontSize: 16,
+              fontWeight: "600",
+              paddingLeft: 12,
+              color: "white",
+            }}
+          />
         </View>
         <View className="flex-row items-center gap-5 mx-4">
           <PlayPauseButton iconSize={24} />

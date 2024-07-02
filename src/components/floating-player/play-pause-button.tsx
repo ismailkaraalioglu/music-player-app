@@ -1,4 +1,4 @@
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome6 } from "@expo/vector-icons";
 import { FC } from "react";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
 import TrackPlayer, { useIsPlaying } from "react-native-track-player";
@@ -16,7 +16,7 @@ const PlayPauseButton: FC<Props> = ({ iconSize = 24, style }) => {
   return (
     <View style={[{ height: iconSize }, style]}>
       <TouchableOpacity activeOpacity={0.85} onPress={onPress}>
-        <FontAwesome name={iconName} size={iconSize} color="#fff" />
+        <FontAwesome6 name={iconName} size={iconSize} color="#fff" />
       </TouchableOpacity>
     </View>
   );
