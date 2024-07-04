@@ -1,4 +1,4 @@
-import { formatSecondsToMinute } from "@/lib/formatters";
+import { formatSecondsToMinute } from "@/lib/utils";
 import { Text, View } from "react-native";
 import { Slider } from "react-native-awesome-slider";
 import { useSharedValue } from "react-native-reanimated";
