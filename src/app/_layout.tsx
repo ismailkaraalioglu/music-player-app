@@ -7,7 +7,7 @@ import { useCallback } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
-import "../styles/global.css";
+import "../../global.css";
 
 SplashScreen.preventAutoHideAsync();
 
