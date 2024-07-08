@@ -25,4 +25,6 @@ npx expo run:ios
 :point_right: NativeWind <br />
 
 # Screenshots
-![./screenshots/ss.gif](./screenshots/ss.gif)
+<p align="">
+  <img src="./screenshots/ss.gif" alt="Screenshot" width="600" height="1200"/>
+</p>
