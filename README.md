@@ -23,3 +23,6 @@ npx expo run:ios
 :point_right: TypeScript <br />
 :point_right: Redux Toolkit <br />
 :point_right: NativeWind <br />
+
+# Screenshots
+![./screenshots/ss.gif](./screenshots/ss.gif)
