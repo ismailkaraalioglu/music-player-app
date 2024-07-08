@@ -26,7 +26,7 @@ const ItemSeparatorComponent = () => {
 const ArtistsScreen = () => {
   const search = useNavigationSearch({
     searchBarOptions: {
-      placeholder: "Find in songs",
+      placeholder: "Find in artist",
     },
   });
   const { artists } = useArtists();
