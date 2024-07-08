@@ -48,6 +48,15 @@ const RootNavigation = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="(modals)/add-to-playlist"
+        options={{
+          presentation: "modal",
+          headerStyle: { backgroundColor: "#000" },
+          headerTitle: "Add to playlist",
+          headerTitleStyle: { color: "#fff" },
+        }}
+      />
     </Stack>
   );
 };

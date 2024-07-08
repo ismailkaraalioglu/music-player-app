@@ -8,6 +8,7 @@ import {
   VolumeBar,
 } from "@/components/player-controls";
 import { usePlayerBackground } from "@/hooks/use-player-background";
+import { usePlayerTrackFavorite } from "@/hooks/use-player-track-favorite";
 import { unknownTrackImageUri } from "@/lib/images";
 import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
@@ -22,10 +23,7 @@ const PlayerScreen = () => {
   const { imageColor } = usePlayerBackground(
     activeTrack?.artwork ?? unknownTrackImageUri
   );
-
-  const isFavorite = false;
-
-  const handleFavoriteButton = () => {};
+  const { isFavorite, toggleFavorite } = usePlayerTrackFavorite();
 
   if (!activeTrack) {
     return <Loading />;
@@ -76,7 +74,7 @@ const PlayerScreen = () => {
                     size={20}
                     color={isFavorite ? "#fc3c44" : "#fff"}
                     style={{ marginHorizontal: 14 }}
-                    onPress={handleFavoriteButton}
+                    onPress={toggleFavorite}
                   />
                 </View>
 

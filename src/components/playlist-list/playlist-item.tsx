@@ -35,7 +35,7 @@ const PlaylistItem: FC<Props> = ({ playlist, ...props }) => {
             name="right"
             size={16}
             color="#fff"
-            style={{ opacity: 0.5 }}
+            style={{ opacity: 0.5, paddingHorizontal: 10 }}
           />
         </View>
       </View>

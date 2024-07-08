@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-menu/menu": "^1.1.2",
     "@reduxjs/toolkit": "^2.2.6",
     "expo": "~51.0.14",
     "expo-blur": "~13.0.2",

@@ -5,6 +5,8 @@ import { Text, TouchableHighlight, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import LoaderKit from "react-native-loader-kit";
 import { Track, useActiveTrack, useIsPlaying } from "react-native-track-player";
+import ShortcutsMenu from "../shortcuts-menu";
+import StopPropagation from "../stop-propagation";
 
 type Props = {
   track: Track;
@@ -77,7 +79,11 @@ const TrackItem: FC<Props> = ({ track, onSelectTrack }) => {
               </Text>
             )}
           </View>
-          <Entypo name="dots-three-vertical" size={18} color="#fff" />
+          <StopPropagation>
+            <ShortcutsMenu track={track}>
+              <Entypo name="dots-three-vertical" size={18} color="#fff" />
+            </ShortcutsMenu>
+          </StopPropagation>
         </View>
       </View>
     </TouchableHighlight>
