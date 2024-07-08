@@ -10,6 +10,16 @@ const ArtistsScreenLayout = () => {
           name="index"
           options={{ ...StackScreenWithSearchBar, headerTitle: "Artists" }}
         />
+        <Stack.Screen
+          name="[name]"
+          options={{
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "#000",
+            },
+            headerTintColor: "#2a89d8",
+          }}
+        />
       </Stack>
     </View>
   );

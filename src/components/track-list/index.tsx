@@ -3,9 +3,9 @@ import { setActiveQueueId, useQueueStore } from "@/stores/queue-slice";
 import { FC, useRef } from "react";
 import { FlatList, FlatListProps } from "react-native";
 import TrackPlayer, { Track } from "react-native-track-player";
+import EmptyContent from "../empty-content";
 import QueueControls from "../queue-controls";
 import ItemDivider from "./divider";
-import EmptyContent from "./empty-content";
 import TrackItem from "./track-item";
 
 export type TrackListProps = Partial<FlatListProps<Track>> & {
@@ -68,7 +68,7 @@ const TrackList: FC<TrackListProps> = ({
       ListHeaderComponent={ListHeaderComponent}
       ListFooterComponent={ItemDivider}
       ItemSeparatorComponent={ItemDivider}
-      ListEmptyComponent={EmptyContent}
+      ListEmptyComponent={<EmptyContent message="No song found" isTrackList />}
       renderItem={({ item: track }) => (
         <TrackItem track={track} onSelectTrack={handleSelectTrack} />
       )}
