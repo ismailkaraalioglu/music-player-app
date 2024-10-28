@@ -7,7 +7,7 @@
 1. Clone the repository and install its features.
 
 ```
-yarn install
+npm install
 ```
 
 2. Run IOS.
